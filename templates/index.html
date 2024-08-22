@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthereumVM Contract Analyzer | Stealth Research</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;500&display=swap');
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 20px;
+        }
+        h1 {
+            font-weight: 500;
+            font-size: 36px;
+            color: #333;
+        }
+        h1 span {
+            font-weight: 200;
+            font-size: 24px;
+        }
+        h2 {
+            font-weight: 400;
+            color: #666;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        code {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>EthereumVM Contract Analyzer <span>| Stealth Research</span></h1>
+
+    <h2>Application Program Interface Usage Documentation</h2>
+
+    <table>
+        <tr>
+            <th>Endpoint</th>
+            <th>Method</th>
+            <th>Parameters</th>
+            <th>Returns</th>
+        </tr>
+
+        <tr>
+            <td><code>/analyze</code></td>
+            <td>POST</td>
+            <td>
+                <ul>
+                    <li><code>Content-Type: application/text</code></li>
+                    <li><code>Authorization: Auth Key</code></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><code>Content-Type: application/text</code> (in case of error)</li>
+                    <li><code>Content-Type: application/json</code>
+                        <ul>
+                            <li><code>data</code>: JSON object with analysis report, source, and JSON identifier</li>
+                        </ul>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><code>/report</code></td>
+            <td>GET</td>
+            <td>
+                <ul>
+                    <li><code>seq</code>: sequence to fetch analysis HTML report</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>HTML report</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><code>/json</code></td>
+            <td>GET</td>
+            <td>
+                <ul>
+                    <li><code>seq</code>: sequence to fetch analysis report in JSON format</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>JSON report</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><code>/source</code></td>
+            <td>GET</td>
+            <td>
+                <ul>
+                    <li><code>seq</code>: sequence to fetch the source code provided for analysis in raw format</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Raw text/HTML format</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
